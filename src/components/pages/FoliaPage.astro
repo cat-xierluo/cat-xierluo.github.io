@@ -357,8 +357,20 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
     min-height: 250px;
     padding: 24px 22px;
     border: 1px solid var(--border);
+    border-top: 3px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      border-top-width 200ms ease;
+  }
+
+  .feature-card:hover,
+  .feature-card:focus-visible {
+    transform: translateY(-4px) scale(1.012);
+    box-shadow: 0 16px 40px oklch(28% 0.035 60 / 18%);
+    border-top-width: 5px;
   }
 
   .feature-card:nth-child(2) {
