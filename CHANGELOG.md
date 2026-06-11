@@ -1,5 +1,14 @@
 # personal-site 变更日志
 
+## 0.1.0-alpha.13 - 2026-06-11
+
+- ISS-016 产品页功能卡 hover 动画统一：以 LegalSkillsPage `.skill-card` 为基准，为 Folia / FaroPDF / Agent Executor 三个详情页的 `.feature-card` 补齐一致的 hover 交互。首页 ProductCard 保持更轻力度（不同上下文适配）。
+  - `translateY(-4px) scale(1.012)` 上移微缩放
+  - `box-shadow: 0 16px 40px oklch(... / 18%)` 悬浮阴影
+  - `border-top` 从 3px 过渡到 5px
+  - `transition: 200ms ease` 统一时序
+  - `:focus-visible` 键盘无障碍支持
+
 ## 0.1.0-alpha.12 - 2026-06-07
 
 - v1.0 内容事实核查 + FaroPDF v0.1.1 同步：对齐三个源仓库（Folia / FaroPDF / Legal Skills）当前状态。docs 同步。

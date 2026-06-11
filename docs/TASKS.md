@@ -6,6 +6,8 @@
 
 - **ISS-015** Agent Execute Recast 插件集成 — 在主页新增第 4 张产品卡 + 详情页（与 Folia / FaroPDF / Legal Skills 同级）
 
+- **ISS-016** ~~产品页功能卡 hover 动画统一~~ ✅ — 以 LegalSkillsPage `.skill-card` 为基准，为 FoliaPage / FaroPdfPage / AgentExecutorPage 的 `.feature-card` 补齐一致的 hover 交互（translateY(-4px) scale(1.012) + shadow + border-top 3→5px + focus-visible）；首页 ProductCard 保持更轻力度（translateY(-2px) / 160ms）
+
 ### 远期候选
 
 - v1.1：i18n 同步到产品仓 README / blog 子栏目
