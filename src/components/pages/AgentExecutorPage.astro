@@ -103,13 +103,28 @@ const introBody = dict.agentExecutor.introBody.replace(/\{name\}/g, p.name);
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: clamp(46px, 7vw, 82px) clamp(18px, 4vw, 56px) clamp(28px, 4vw, 42px);
+    padding: clamp(56px, 8vw, 100px) clamp(18px, 4vw, 56px) clamp(36px, 5vw, 56px);
     border-bottom: 1px solid var(--border);
     background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
   }
 
+  .ae-hero::before {
+    content: 'λ';
+    position: absolute;
+    bottom: -20px;
+    right: clamp(0px, 5vw, 80px);
+    font-family: var(--font-mono);
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 700;
+    color: rgba(245, 158, 11, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
   .ae-hero-inner {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,7 +141,7 @@ const introBody = dict.agentExecutor.introBody.replace(/\{name\}/g, p.name);
     margin-bottom: 22px;
     border-radius: 28px;
     background: var(--surface);
-    box-shadow: 0 14px 38px oklch(32% 0.035 60 / 14%);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.30);
   }
 
   .ae-hero-icon {
@@ -147,7 +162,7 @@ const introBody = dict.agentExecutor.introBody.replace(/\{name\}/g, p.name);
   .ae-hero-summary {
     max-width: 580px;
     margin: 22px 0 0;
-    color: oklch(28% 0.025 60);
+    color: var(--ink);
     font-size: clamp(15px, 1.8vw, 18px);
     line-height: 1.7;
   }
@@ -183,7 +198,7 @@ const introBody = dict.agentExecutor.introBody.replace(/\{name\}/g, p.name);
   .feature-card:hover,
   .feature-card:focus-visible {
     transform: translateY(-4px) scale(1.012);
-    box-shadow: 0 16px 40px oklch(28% 0.035 60 / 18%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
     border-top-width: 5px;
   }
 

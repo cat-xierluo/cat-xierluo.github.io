@@ -164,13 +164,28 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: clamp(46px, 7vw, 82px) clamp(18px, 4vw, 56px) clamp(28px, 4vw, 42px);
+    padding: clamp(56px, 8vw, 100px) clamp(18px, 4vw, 56px) clamp(36px, 5vw, 56px);
     border-bottom: 1px solid var(--border);
     background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
   }
 
+  .folia-hero::before {
+    content: '¶';
+    position: absolute;
+    bottom: -20px;
+    right: clamp(0px, 5vw, 80px);
+    font-family: var(--font-display);
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 700;
+    color: rgba(16, 185, 129, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
   .folia-hero-inner {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,13 +199,13 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
     height: 86px;
     margin-bottom: 26px;
     border-radius: 18px;
-    box-shadow: 0 12px 34px oklch(32% 0.035 60 / 14%);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.30);
   }
 
   .folia-hero-tagline {
     max-width: 660px;
     margin: 12px 0 0;
-    color: oklch(28% 0.025 60);
+    color: var(--ink);
     font-size: clamp(17px, 2.2vw, 23px);
     line-height: 1.72;
   }
@@ -217,7 +232,7 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
     width: 100%;
     min-width: 0;
     margin: 0 auto;
-    border: 1px solid oklch(82% 0.018 75);
+    border: 1px solid #2a3a3a;
     border-radius: 8px;
     background: var(--surface);
     box-shadow: var(--shadow);
@@ -269,7 +284,7 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
   .app-rail span {
     width: 16px;
     height: 2px;
-    background: oklch(72% 0.02 75);
+    background: #3a4a4a;
   }
 
   .editor-pane {
@@ -294,18 +309,18 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
     display: grid;
     place-items: center;
     padding: 34px;
-    background: oklch(93% 0.014 78);
+    background: #1a2e2e;
   }
 
   .paper {
     width: min(360px, 100%);
     min-height: 320px;
     padding: 34px 32px;
-    border: 1px solid oklch(86% 0.012 75);
+    border: 1px solid #263838;
     border-radius: 2px;
     background: white;
-    box-shadow: 0 14px 42px oklch(30% 0.025 60 / 12%);
-    color: var(--ink);
+    box-shadow: 0 14px 42px rgba(0, 0, 0, 0.25);
+    color: #1a2332;
   }
 
   .paper h2 {
@@ -324,14 +339,14 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
   .paper th,
   .paper td {
     padding: 8px 9px;
-    border: 1px solid oklch(82% 0.015 76);
+    border: 1px solid #e0e0e0;
     text-align: left;
     vertical-align: top;
   }
 
   .paper th {
-    background: oklch(96% 0.01 78);
-    color: var(--muted);
+    background: #f5f5f5;
+    color: #666;
     font-weight: 500;
   }
 
@@ -369,7 +384,7 @@ const introKicker = `${dict.folia.introKickerPrefix} ${p.name}`;
   .feature-card:hover,
   .feature-card:focus-visible {
     transform: translateY(-4px) scale(1.012);
-    box-shadow: 0 16px 40px oklch(28% 0.035 60 / 18%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
     border-top-width: 5px;
   }
 

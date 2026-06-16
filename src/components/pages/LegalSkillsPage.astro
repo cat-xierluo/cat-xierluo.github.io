@@ -114,9 +114,23 @@ const introKicker = `${dict.legalSkills.introKickerPrefix} ${p.name}`;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: clamp(64px, 9vw, 112px) clamp(18px, 4vw, 56px) clamp(48px, 6vw, 72px);
+    padding: clamp(56px, 8vw, 100px) clamp(18px, 4vw, 56px) clamp(36px, 5vw, 56px);
     border-bottom: 1px solid var(--border);
     background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  }
+
+  .legalskills-hero::before {
+    content: '∴';
+    position: absolute;
+    bottom: -20px;
+    right: clamp(0px, 5vw, 80px);
+    font-family: var(--font-display);
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 700;
+    color: rgba(167, 139, 250, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
   }
 
   .legalskills-hero-inner {
@@ -134,13 +148,13 @@ const introKicker = `${dict.legalSkills.introKickerPrefix} ${p.name}`;
     width: 86px;
     height: 86px;
     border-radius: 18px;
-    box-shadow: 0 6px 18px oklch(28% 0.035 60 / 14%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.30);
   }
 
   .legalskills-hero-tagline {
     max-width: 660px;
     margin: 12px 0 0;
-    color: oklch(28% 0.025 60);
+    color: var(--ink);
     font-size: clamp(17px, 2.2vw, 23px);
     line-height: 1.72;
   }
@@ -206,7 +220,7 @@ const introKicker = `${dict.legalSkills.introKickerPrefix} ${p.name}`;
   .skill-card:hover,
   .skill-card:focus-visible {
     transform: translateY(-4px) scale(1.012);
-    box-shadow: 0 16px 40px oklch(28% 0.035 60 / 18%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
     border-top-width: 5px;
   }
 
