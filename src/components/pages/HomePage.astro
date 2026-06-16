@@ -18,88 +18,101 @@ const authorName = locale === 'en' ? author.nameEn : author.name;
 const authorTitle = locale === 'en' ? author.titleEn : author.title;
 const authorFocus = locale === 'en' ? author.focusEn : author.focus;
 const authorBio = locale === 'en' ? author.bioEn : author.bio;
-const githubHandle = author.contacts.githubHandle;
 
 const title = locale === 'en'
   ? `${authorName} — ${authorTitle} (${authorFocus})`
   : `${authorName} — ${authorTitle}（${authorFocus}）`;
-
-const aboutContactLine = locale === 'en'
-  ? `${dict.index.aboutContactLine}: WeChat ${author.contacts.wechat} · GitHub ${githubHandle}`
-  : `${dict.index.aboutContactLine}：微信 ${author.contacts.wechat} · GitHub ${githubHandle}`;
-
-const githubDisplay = author.contacts.github.replace('https://', '');
 ---
 
 <BaseLayout title={title} activeSection="home" locale={locale}>
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-inner">
-      <p class="eyebrow">{dict.index.heroEyebrow}</p>
-      <h1 id="hero-title">{authorName}</h1>
-      <p class="hero-title-line">{authorTitle} · {authorFocus}</p>
-      <p class="hero-copy">{authorBio}</p>
-      <div class="hero-actions" aria-label={dict.nav.home}>
-        <a class="button button-primary" href="#products">{dict.index.heroPrimaryCta}</a>
-        <a class="button button-secondary" href={author.contacts.github} target="_blank" rel="noreferrer">{dict.index.heroSecondaryCtaPrefix}{githubDisplay}</a>
+  <section class="hero hero--split" aria-labelledby="hero-title">
+    <div class="hero-inner hero-inner--split">
+      <div class="hero-text">
+        <p class="eyebrow">{dict.index.heroEyebrow}</p>
+        <h1 id="hero-title">{authorName}</h1>
+        <p class="hero-title-line">{authorTitle} · {authorFocus}</p>
+        <p class="hero-copy">{authorBio}</p>
+        <div class="hero-actions" aria-label={dict.nav.home}>
+          <a class="button button-primary" href="#products">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l5 5 5-5"/><path d="M12 16V4"/></svg>
+            {dict.index.heroPrimaryCta}
+          </a>
+          <a class="button button-secondary" href={author.contacts.github} target="_blank" rel="noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <div class="hero-wechat-wrap">
+            <button class="button button-tertiary" type="button">
+              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05a6.37 6.37 0 01-.235-1.69c0-3.66 3.328-6.63 7.43-6.63.275 0 .543.023.811.05C16.713 4.867 13.073 2.188 8.691 2.188zm-2.87 4.401a1.026 1.026 0 11-.001 2.051 1.026 1.026 0 010-2.051zm5.742 0a1.026 1.026 0 110 2.051 1.026 1.026 0 010-2.051zM15.697 9.39c-3.637 0-6.598 2.625-6.598 5.862 0 3.238 2.96 5.862 6.598 5.862a7.95 7.95 0 002.275-.333.723.723 0 01.59.081l1.563.912a.265.265 0 00.138.045c.131 0 .237-.108.237-.243 0-.058-.025-.117-.04-.174l-.318-1.215a.477.477 0 01.175-.548c1.545-1.112 2.534-2.793 2.534-4.667 0-3.237-2.96-5.862-6.597-5.862h-.557zm-2.587 3.588a.856.856 0 110 1.711.856.856 0 010-1.711zm5.175 0a.856.856 0 110 1.711.856.856 0 010-1.711z"/></svg>
+              {dict.index.contactWechatLabel}
+            </button>
+            <div class="hero-wechat-qr">
+              <WechatQr
+                size={120}
+                alt={dict.index.contactWechatQrAlt}
+                caption={dict.index.contactWechatCaption}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="terminal-dot terminal-dot--red"></span>
+          <span class="terminal-dot terminal-dot--yellow"></span>
+          <span class="terminal-dot terminal-dot--green"></span>
+          <span class="terminal-title">~/projects</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="terminal-prompt">$</span> whoami</div>
+          <div class="terminal-line terminal-output">{authorName}</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> ls projects/</div>
+          <div class="terminal-line terminal-output">folia/ faropdf/ legal-skills/ agent-executor/</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> cat stack.txt</div>
+          <div class="terminal-line terminal-output">Tauri · Rust · Astro · TypeScript</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> echo $FOCUS</div>
+          <div class="terminal-line terminal-output">IP · Data · AI</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-cursor">█</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="section-inner about-grid">
-      <div>
-        <p class="section-kicker">{dict.index.aboutKicker}</p>
-        <h2 id="about-title">{dict.index.aboutTitle}</h2>
-      </div>
-      <div class="about-text">
+  <section class="section reveal" id="about" aria-labelledby="about-title">
+    <div class="section-inner about-centered">
+      <p class="section-kicker">{dict.index.aboutKicker}</p>
+      <h2 id="about-title">{dict.index.aboutTitle}</h2>
+      <div class="about-text about-text--centered">
         <p>{dict.index.aboutParagraph1}</p>
         <p>{dict.index.aboutParagraph2}</p>
-        <p>{aboutContactLine}</p>
+        <div class="about-products">
+          {dict.index.aboutProducts.map((product) => (
+            <p>{product}</p>
+          ))}
+        </div>
+      </div>
+      <div class="stats-bar reveal">
+        {dict.index.stats.map((stat) => (
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section section-products" id="products" aria-labelledby="products-title">
+  <section class="section section-products reveal" id="products" aria-labelledby="products-title">
     <div class="section-inner">
       <p class="section-kicker">{dict.index.productsKicker}</p>
       <h2 id="products-title">{dict.index.productsTitle}</h2>
-      <div class="product-grid">
+      <div class="bento-grid">
+        <ProductCard slug="legal-skills" locale={locale} dict={dict} featured />
         <ProductCard slug="folia" locale={locale} dict={dict} />
         <ProductCard slug="faropdf" locale={locale} dict={dict} />
-        <ProductCard slug="legal-skills" locale={locale} dict={dict} />
         <ProductCard slug="agent-executor" locale={locale} dict={dict} />
       </div>
     </div>
   </section>
 
-  <section class="section section-contact" id="contact" aria-labelledby="contact-title">
-    <div class="section-inner contact-grid">
-      <div>
-        <p class="section-kicker">{dict.index.contactKicker}</p>
-        <h2 id="contact-title">{dict.index.contactTitle}</h2>
-      </div>
-      <div class="contact-list">
-        <div class="contact-item">
-          <span class="contact-label">{dict.index.contactWechatLabel}</span>
-          <code>{author.contacts.wechat}</code>
-        </div>
-        <div class="contact-item contact-item--qr">
-          <span class="contact-label">{dict.index.contactWechatLabel}</span>
-          <WechatQr
-            size={160}
-            alt={dict.index.contactWechatQrAlt}
-            caption={dict.index.contactWechatCaption}
-          />
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">{dict.index.contactGithubLabel}</span>
-          <a href={author.contacts.github} target="_blank" rel="noreferrer">{githubHandle}</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">{dict.index.contactDomainLabel}</span>
-          <span>{dict.index.contactDomainValue}</span>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
