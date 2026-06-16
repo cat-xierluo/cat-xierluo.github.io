@@ -37,10 +37,16 @@ const htmlLang = resolved === 'en' ? 'en' : 'zh-CN';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={desc} />
-    <meta name="theme-color" content="#f7f1e8" />
+    <meta name="theme-color" content="#0f1a1a" />
     <meta name="author" content={authorName} />
     <title>{title}</title>
     <link rel="icon" href={`${base}favicon.png`} type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <SiteHeader locale={resolved} dict={dict} activeSection={activeSection} />
@@ -48,5 +54,33 @@ const htmlLang = resolved === 'en' ? 'en' : 'zh-CN';
       <slot />
     </main>
     <SiteFooter locale={resolved} dict={dict} />
+    <script>
+      // Scroll-reveal via IntersectionObserver (ISS-021)
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.setProperty('--reveal-index', String(i));
+        io.observe(el);
+      });
+
+      // Nav shadow on scroll
+      const header = document.querySelector('.site-header');
+      if (header) {
+        const onScroll = () => {
+          header.classList.toggle('is-scrolled', window.scrollY > 8);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    </script>
   </body>
 </html>
