@@ -36,10 +36,22 @@ const messages: Messages = {
     aboutKicker: 'About',
     aboutTitle: 'Solving the small friction points in legal work, one at a time.',
     aboutParagraph1:
-      'I am Yang Weixin, an attorney-at-law. I focus on technology-related disputes, intellectual property, and data & AI-related issues. I also keep a long-running interest in applying AI to legal practice, knowledge management, and professional writing.',
+      'I am Yang Weixin, an attorney-at-law specializing in technology-related disputes, covering intellectual property, data assets, and AI-related controversies. I have represented cases across IP courts, provincial high courts, and the Supreme People\'s Court, with deep practical experience in patent infringement, trade secrets, data rights, and technology contract disputes. I also actively explore and apply AI to legal practice, knowledge management, and professional writing.',
     aboutParagraph2:
-      'This page is the entry point for "about + products". Folia solves "stable reading and paper export for complex Markdown documents", FaroPDF solves "fast read, annotation, OCR, and signing delivery for case files, evidence, scanned materials, and contract PDFs", and Legal Skills consolidates the whole workflow into composable AI Agent skills.',
+      'This page is the "author + products" hub:',
+    aboutProducts: [
+      'Folia — Stable reading and Word export for complex Markdown documents',
+      'FaroPDF — Fast read, annotate, OCR, and signing for case files, evidence, and contract PDFs',
+      'Legal Skills — 48 composable AI Agent skills for the full legal workflow',
+      'Agent Executor — One-click execution of Claude Code Skills in Raycast',
+    ],
     aboutContactLine: 'Contact',
+    stats: [
+      { value: '4', label: 'Open Source' },
+      { value: '48', label: 'AI Skills' },
+      { value: '2', label: 'Desktop Apps' },
+      { value: 'IP/AI', label: 'Practice Area' },
+    ],
     productsKicker: 'Products',
     productsTitle: 'Four open source projects refined for everyday legal work.',
     contactKicker: 'Contact',

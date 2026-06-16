@@ -26,6 +26,11 @@ export interface ProductCardMessages {
   iconAlt: string;
 }
 
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
 export interface IndexMessages {
   heroEyebrow: string;
   heroPrimaryCta: string;
@@ -34,7 +39,9 @@ export interface IndexMessages {
   aboutTitle: string;
   aboutParagraph1: string;
   aboutParagraph2: string;
+  aboutProducts: string[];
   aboutContactLine: string;
+  stats: StatItem[];
   productsKicker: string;
   productsTitle: string;
   contactKicker: string;

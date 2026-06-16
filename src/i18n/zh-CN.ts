@@ -36,10 +36,22 @@ const messages: Messages = {
     aboutKicker: '关于',
     aboutTitle: '把法律工作里的小障碍，一件一件解决。',
     aboutParagraph1:
-      '我是杨卫薪律师，专注于技术类纠纷领域，包括知识产权、数据与 AI 相关争议；同时长期关注 AI 技术在法律实务、知识管理和专业写作中的应用。',
+      '我是杨卫薪律师，专注于技术类纠纷领域，涵盖知识产权、数据资产与 AI 相关争议。代理案件遍布各地知识产权法院/法庭、各省高级人民法院及最高人民法院，在专利侵权、商业秘密、数据权益和技术合同纠纷等方向积累了丰富的实战经验。同时长期关注并实践 AI 技术在法律实务、知识管理和专业写作中的深度应用。',
     aboutParagraph2:
-      '这个页面是「作者 + 产品」的入口。Folia 解决「复杂 Markdown 文档的稳定阅读和纸面导出」，FaroPDF 解决「卷宗、证据、扫描件、合同 PDF 的快读、批注、OCR 和签署交付」，Legal Skills 把这一整套工作流沉淀成可装配的 AI Agent 技能。',
+      '这个页面是「作者 + 产品」的入口：',
+    aboutProducts: [
+      'Folia — 复杂 Markdown 文档的稳定阅读与 Word 纸面导出',
+      'FaroPDF — 卷宗、证据、扫描件、合同 PDF 的快读、批注、OCR 和签署交付',
+      'Legal Skills — 把法律工作全流程沉淀成可装配的 48 个 AI Agent 技能',
+      'Agent Executor — 在 Raycast 里一键执行 Claude Code Skills',
+    ],
     aboutContactLine: '联系方式',
+    stats: [
+      { value: '4', label: '开源产品' },
+      { value: '48', label: 'AI Skills' },
+      { value: '2', label: '桌面应用' },
+      { value: 'IP/AI', label: '专业领域' },
+    ],
     productsKicker: '产品',
     productsTitle: '四个为日常法律工作打磨的开源项目。',
     contactKicker: '联系方式',
