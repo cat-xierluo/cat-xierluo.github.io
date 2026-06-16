@@ -1,5 +1,18 @@
 # personal-site 变更日志
 
+## 0.1.0-alpha.14 - 2026-06-17
+
+- **v1.2 视觉设计升级**：ISS-017~022 六项任务全部落地，色彩体系升级为暗绿翡翠 #hex 色板，引入 Google Fonts + scroll-reveal 动效，详情页 Hero 装饰符号 + 间距统一。docs 同步（DEC-013）。
+  - **ISS-017 色彩体系**：暖灰+棕 oklch → 暗绿翡翠 #hex。背景 `#0f1a1a` / 卡片 `#162424` / 主色 `#10b981`（翡翠绿）/ 深 `#059669`。保留产品色 sage / steel / royal / amber 改为 #hex
+  - **ISS-018 Hero 重设计**：左右分栏布局，左侧文字 + CTA（带 SVG 图标），右侧 `.hero-terminal` 终端装饰（whoami / ls / cat stack.txt / echo $FOCUS + 闪烁光标）
+  - **ISS-019 产品卡片**：ProductCard 增加 `featured` 可选 prop，首页用 `.bento-grid` 取代 `.product-grid`，LegalSkills 标 featured 放首位（更大尺寸 + 渐变描边）
+  - **ISS-020 字体加载**：BaseLayout 预加载 Google Fonts（Inter + JetBrains Mono + Noto Sans SC + Noto Serif SC），`font-display: swap`，替换系统字体
+  - **ISS-021 滚动动效**：内联 IntersectionObserver 脚本实现 `.reveal` 渐入 + nav `.is-scrolled` 阴影变化（被动监听）
+  - **ISS-022 详情页一致性**：4 个产品页 Hero 各配独立装饰符号（Folia ¶ sage / FaroPDF § steel / LegalSkills ∴ royal / Agent Executor λ amber），hero 间距统一，oklch 暗色适配
+  - **首页 about 区块**：左右 grid → 居中布局 + `.about-products` 列表 + `.stats-bar` 横向统计条（4 开源 / 48 AI Skills / 2 桌面应用 / IP/AI 专业领域）
+  - **i18n 扩展**：types.ts 新增 `StatItem` 接口，`IndexMessages` 增加 `stats` 和 `aboutProducts` 字段，中英简介扩展
+  - **scope**：15 files / +880 / -291 + 3 个图片资源（agent-executor 详情/移动截图 + avatar）
+
 ## 0.1.0-alpha.13 - 2026-06-11
 
 - ISS-016 产品页功能卡 hover 动画统一：以 LegalSkillsPage `.skill-card` 为基准，为 Folia / FaroPDF / Agent Executor 三个详情页的 `.feature-card` 补齐一致的 hover 交互。首页 ProductCard 保持更轻力度（不同上下文适配）。
