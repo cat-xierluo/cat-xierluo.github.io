@@ -320,3 +320,59 @@ legal-skills-icon：源 `legal-skills/docs/legal-skills-icon.jpg`（1536×1024 �
 
 - `WechatQr.astro` 组件保留（homepage contact section 仍用）
 - 净 -110 行（9 files / +15 / -125）
+
+---
+
+## DEC-013 v1.2 视觉设计升级方向
+
+- 日期：2026-06-16
+- 状态：已采纳
+- 关联任务：ISS-017~022
+
+### 决策
+
+设计定位：「法律人的克制 + 开发者的精致」。用编辑式排版、克制的装饰和细腻的交互来传达专业与品味。六项任务按 P0 → P1 → P2 顺序推进。
+
+### 色彩体系（ISS-017）
+
+从暖灰+棕升级为「律政金」色系：
+
+| 角色 | 旧值 | 新值 | 语义 |
+| --- | --- | --- | --- |
+| `--bg` | `oklch(97% 0.012 80)` | `#faf8f5` | 羊皮纸白 |
+| `--surface` | `oklch(99% 0.005 80)` | `#ffffff` | 纯白卡片 |
+| `--surface-strong` | `oklch(94% 0.018 78)` | `#f5f0e8` | 奶油底 |
+| `--ink` | `oklch(20% 0.02 60)` | `#1a2332` | 律政墨 |
+| `--muted` | `oklch(46% 0.018 62)` | `#6b6b66` | 灰调 |
+| `--border` | `oklch(86% 0.018 76)` | `#e5e2dc` | 暖灰线 |
+| `--accent` | `oklch(58% 0.16 35)` | `#c4a882` | 古金 |
+| `--accent-deep` | `oklch(37% 0.12 36)` | `#8b6f47` | 深铜 |
+
+保留 `--sage` / `--steel` / `--royal` / `--amber` 产品色，微调明度以适配新底色。
+
+### Hero 重设计（ISS-018）
+
+加入大型半透明装饰性法律符号（`§` 或 `¶`）作为背景纹理（opacity ≈ 4%），金色渐变分隔线（40px 宽 1px 高），更考究的行间距。
+
+### 产品卡片重设计（ISS-019）
+
+从「图标+文字横排」改为「图标在上、文字在下纵向布局」。图标加渐变底色（产品色 10%→5%），卡片顶部用 2px 渐变条代替 3px 纯色 border-top。
+
+### 字体优化（ISS-020）
+
+引入 Inter（英文无衬体）+ Noto Sans SC（中文）替代系统字体。通过 Google Fonts `<link>` 加载，`font-display: swap`。
+
+### 动效（ISS-021）
+
+scroll-reveal（fade-up 16px + opacity 0→1，300ms ease-out）通过 Intersection Observer。导航栏滚动时增加 `box-shadow` 微妙变化。所有动效 ≤ 300ms。
+
+### 详情页一致性（ISS-022）
+
+产品详情页 Hero 与首页 Hero 设计语言对齐，每个产品用独立色彩主题装饰符号。
+
+### 拒绝的方案
+
+- **Tailwind CSS**：与 DEC-001 轻量静态站原则冲突，引入编译步骤
+- **大型动画库（GSAP / Framer Motion）**：Astro 静态站不应引入 client JS bundle
+- **暗色模式**：v1.2 不做，法律人场景以日间阅读为主
+- **大图 Hero / 视频背景**：与律师专业形象不符

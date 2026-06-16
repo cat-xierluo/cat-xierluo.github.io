@@ -30,6 +30,7 @@
 
 ## v1.2 远期
 
+- **ISS-017~022** 视觉设计升级 ✅ — 色彩体系（律政金）+ Hero 装饰符号 + 产品卡片纵向布局 + Google Fonts + 滚动动效 + 详情页视觉一致性
 - **ISS-015** Agent Execute Recast 插件集成（第 4 张产品卡 + 详情页）
 - **ISS-008** 自定义域（用户已取消，可重启）
 - analytics / SEO 增强（sitemap + meta + OG）
